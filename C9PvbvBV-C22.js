@@ -22141,16 +22141,15 @@ const pw = Qg(mw)
                     })]
                 }, H)
             }
-            }), f.jsx("div", {
+            ), f.jsx("div", {
                 className: "sm:col-span-3",
-                children: f.jsxs(oe.button, {
+                children: d ? f.jsxs(oe.button, {
                     type: "button",
                     whileTap: {
                         scale: .95
                     },
-                    className: "text-white mb-2 duration-300 cursor-pointer mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-[#28a745] hover:bg-[#218838]",
-                    onClick: de, // click করলে de() ফাংশন সবসময় call হবে
-                    children: (de = s == null ? void 0 : s.lblSaveNext) == null ? void 0 : de[l]
+                    className: "text-white mb-2 duration-300 cursor-not-allowed mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-gray-500 ",
+                    children: [(de = s == null ? void 0 : s.checking) == null ? void 0 : de[l], "..."]
                 }) : f.jsx(oe.button, {
                     type: "button",
                     whileTap: {
@@ -23087,16 +23086,22 @@ const pw = Qg(mw)
                                 children: qt
                             })
                         })]
-                    }), f.jsx("button", {
-                        className: `w-full py-3 mb-2 rounded-lg duration-300 text-white
-    ${at && !He ? "bg-green-600 hover:bg-green-700 cursor-pointer" : "bg-gray-400 cursor-not-allowed"}`,
-                        disabled: !at || He,
-                        onClick: at && !He ? zt : void 0,
-                        children: He ? ((qa = o == null ? void 0 : o.processing) == null ? void 0 : qa[s]) + "..." : (un = o == null ? void 0 : o.payNow) == null ? void 0 : un[s]
-                    }), f.jsx("p", {
-                        className: "text-xs text-red-500 text-center",
-                        children: (Ya = o == null ? void 0 : o.msgTrans5min) == null ? void 0 : Ya[s]
-                    })]
+}), f.jsxs("div", {
+    children: [
+        f.jsx("button", {
+            type: "button",
+            disabled: false, // সবসময় active
+            className: "w-full py-3 mb-2 rounded-lg duration-300 text-white bg-green-600 hover:bg-green-700 cursor-pointer",
+            onClick: zt, // সবসময় call হবে
+            children: (un = o == null ? void 0 : o.payNow) == null ? void 0 : un[s]
+        }),
+        f.jsx("p", {
+            className: "text-xs text-red-500 text-center",
+            children: (Ya = o == null ? void 0 : o.msgTrans5min) == null ? void 0 : Ya[s]
+        })
+    ]
+})
+]
                 })]
             })
         })]
