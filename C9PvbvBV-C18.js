@@ -18951,32 +18951,33 @@ const nj = ({message: n, type: l="info", onClose: s}) => {
                 children: (C = s == null ? void 0 : s.lblNoCopyPaste) == null ? void 0 : C[l]
             })]
         }), f.jsx("input", {
-		type: "password",
-		id: "password",
-		autoComplete: "on",
-		className: "bg-white border-gray-300 h-8 text-gray-900 font-light text-xs rounded-sm focus:ring-0 focus:border-slate-400 duration-300 border-[1.5px] focus:outline-0 block w-full p-2.5 my-2",
-		placeholder: (M = s == null ? void 0 : s.lblInputPassword) == null ? void 0 : M[l],
-		value: o,
-		onChange: F => c(F.target.value)
-		}), f.jsxs("div", {
-		children: [
-        f.jsx(oe.button, {
-            type: "button",
-            whileTap: { scale: .95 },
-            className: "text-white mb-2 mt-2 mr-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-gray-400 hover:bg-[#218838] focus:ring-[#218838] cursor-pointer",
-            onClick: () => n(1),
-            children: (D = s == null ? void 0 : s.back) == null ? void 0 : D[l]
-        }),
-        f.jsx(oe.button, {
-            type: "button",
-            whileTap: { scale: .95 },
-            className: "text-white mb-2 mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838] cursor-pointer",
-            onClick: v,
-            children: (L = s == null ? void 0 : s.lblProceed) == null ? void 0 : L[l]
-        })
-    ]
-})
-]
+            type: "password",
+            id: "password",
+            autoComplete: "on",
+            className: "bg-white border-gray-300 h-8 text-gray-900 font-light text-xs rounded-sm focus:ring-0 focus:border-slate-400 duration-300 border-[1.5px] focus:outline-0 block w-full p-2.5 my-2",
+            placeholder: (M = s == null ? void 0 : s.lblInputPassword) == null ? void 0 : M[l],
+            value: o,
+            onChange: F => c(F.target.value)
+        }), f.jsxs("div", {
+            children: [f.jsx(oe.button, {
+                type: "button",
+                whileTap: {
+                    scale: .95
+                },
+                className: "text-white mb-2 mt-2 mr-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-gray-400 hover:bg-[#218838] focus:ring-[#218838] cursor-pointer",
+                onClick: () => n(1),
+                children: (D = s == null ? void 0 : s.back) == null ? void 0 : D[l]
+            }), f.jsx(oe.button, {
+			type: "button",
+			whileTap: {
+				scale: .95
+			},
+			className: `text-white mb-2 mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition 
+			bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838] cursor-pointer`,
+		onClick: v,
+		children: (L = s == null ? void 0 : s.lblProceed) == null ? void 0 : L[l]
+})]
+
         }), f.jsx("p", {
             className: "text-xs cursor-pointer text-blue-600 mt-2",
             onClick: x,
