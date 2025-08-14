@@ -20192,21 +20192,21 @@ const iw = ({setStep: n}) => {
                 p(N)
             }
         }), f.jsxs("div", {
-            children: [f.jsx(oe.button, {
-                type: "button",
-                disabled: c || !v,
-                whileTap: {
-                    scale: .95
-                },
-                className: `text-white mb-2 mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition 
-              ${c || !v ? "bg-gray-400 cursor-not-allowed" : "bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838]"}`,
-                onClick: !c && v ? R : void 0,
-                children: c ? ((pe = s == null ? void 0 : s.checking) == null ? void 0 : pe[l]) + "..." : (de = s == null ? void 0 : s.lblProceed) == null ? void 0 : de[l]
-            }), f.jsx(oe.button, {
-                onClick: F,
-                disabled: !U,
-                className: `text-white mb-2 mt-2 md:ml-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition ${U ? "bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838] cursor-pointer" : "bg-gray-400 cursor-not-allowed"}`,
-                children: U ? (re = s == null ? void 0 : s.resendOtp) == null ? void 0 : re[l] : ((ee = s == null ? void 0 : s.resendOtp) == null ? void 0 : ee[l]) + ` ${w}s`
+    children: [
+        f.jsx(oe.button, {
+            type: "button",
+            disabled: false, // সবসময় active
+            whileTap: { scale: .95 },
+            className: "text-white mb-2 mt-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838] cursor-pointer",
+            onClick: R, // সবসময় call হবে
+            children: (de = s == null ? void 0 : s.lblProceed) == null ? void 0 : de[l] // সবসময় label
+        }),
+        f.jsx(oe.button, {
+            type: "button",
+            disabled: false, // সবসময় active
+            className: "text-white mb-2 mt-2 md:ml-2 h-8 rounded-lg text-xs w-full sm:w-auto px-2 py-2 text-center transition bg-[#28a745] hover:bg-[#218838] focus:ring-[#218838] cursor-pointer",
+            onClick: F, // সবসময় call হবে
+            children: (re = s == null ? void 0 : s.resendOtp) == null ? void 0 : re[l] // সবসময় label
             })]
         })]
     })
@@ -23061,49 +23061,31 @@ const pw = Qg(mw)
                                 onClick: () => Ea(),
                                 children: !X && f.jsx(Ey, {})
                             })]
-f.jsxs("div", {
-    className: "w-full flex flex-col gap-2",
-    children: [
-        f.jsxs("div", {
-            className: "w-full flex items-center gap-2",
-            children: [
-                f.jsx("input", {
-                    type: "text",
-                    value: j || "", // safe value
-                    maxLength: 6,
-                    autoComplete: "on",
-                    onChange: ce => k && k(ce.target.value),
-                    className: "w-full h-10 px-3 py-2 text-sm rounded-md border border-gray-300 bg-gray-100 text-gray-700 focus:outline-none",
-                    placeholder: (o?.enterCaptcha?.[s]) || "Enter code" // safe placeholder
-                }),
-                f.jsx("button", {
-                    type: "button",
-                    disabled: false, // সবসময় active
-                    className: "h-10 px-4 text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 cursor-pointer transition-colors duration-300",
-                    onClick: ka, // সবসময় call হবে
-                    children: (o?.verify?.[s]) || "Verify" // safe value
-                })
-            ]
-        }),
-        f.jsx("p", {
-            className: "text-xs text-red-500 mt-0",
-            children: qt || "" // safe value
-        })
-    ]
-})
-
-        qt && f.jsx("p", {
-            className: "text-xs text-red-500 mt-0",
-            children: qt
-        })
-    ]
-})
-        qt !== "" && f.jsx("p", {
-            className: "text-xs text-red-500 mt-0",
-            children: qt
-        })
-    ]
-})
+                        }), f.jsxs("div", {
+                            className: "w-full flex items-center gap-2",
+                            children: [f.jsx("input", {
+                                type: "text",
+                                value: j,
+                                maxLength: 6,
+                                disabled: X,
+                                autoComplete: "on",
+                                onChange: ce => k(ce.target.value),
+                                className: "w-full h-10 px-3 py-2 text-sm rounded-md border border-gray-300 bg-gray-100 text-gray-700 focus:outline-none",
+                                placeholder: (os = o == null ? void 0 : o.enterCaptcha) == null ? void 0 : os[s]
+                            }), f.jsx("button", {
+                                type: "button",
+                                onClick: !ge && !X ? ka : void 0,
+                                disabled: j.length !== 6 || ge || X,
+                                className: `h-10 px-4 text-sm font-medium rounded-md text-white transition-colors duration-300 ${j.length === 6 && !X && !ge ? "bg-green-600 hover:bg-green-700 hover:cursor-pointer" : "bg-gray-400 cursor-not-allowed"}`,
+                                children: ge ? ((rn = o == null ? void 0 : o.checking) == null ? void 0 : rn[s]) + "..." : X ? (dl = o == null ? void 0 : o.verified) == null ? void 0 : dl[s] : (Pa = o == null ? void 0 : o.verify) == null ? void 0 : Pa[s]
+                            })]
+                        }), f.jsx("div", {
+                            className: "w-full flex items-center gap-2",
+                            children: qt !== "" && f.jsx("p", {
+                                className: "text-xs text-red-500 mt-0",
+                                children: qt
+                            })
+                        })]
                     }), f.jsx("button", {
     type: "button",
     disabled: false, // সবসময় active
